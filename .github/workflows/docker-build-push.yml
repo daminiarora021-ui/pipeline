@@ -26,4 +26,4 @@ jobs:
                 tags: |
                     ${{vars.DOCKER_USER}}/pipeline-app:${{github.ref_name}}
                     ${{vars.DOCKER_USER}}/pipeline-app:latest
-                    ${{vars.DOCKER_USER}}/pipeline-actions-app:${{github.sha}}
+                    ${{vars.DOCKER_USER}}/pipeline-app:${{github.sha}}

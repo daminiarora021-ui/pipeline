@@ -1,0 +1,7 @@
+services:
+
+  web:
+    image: ${DOCKER_USER}d021/pipeline-app:latest
+    ports:
+      - "80:80"
+

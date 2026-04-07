@@ -7,7 +7,7 @@ jobs:
     
     deploy:
         env:
-            DOCKERHUB_USER : ${{ vars.DOCKERHUB_USER }}
+            DOCKER_USER : ${{ vars.DOCKER_USER }}
         runs-on: self-hosted
 
         steps:

@@ -16,5 +16,7 @@ jobs:
             - name: trivy Scanner
               uses: aquasecurity/trivy-action@v0.33.1
               with:
+                    scan-type: 'image'
+                    image-ref: ${{ vars.DOCKER_USER }}/pipeline-app:latest
                     severity: 'CRITICAL,HIGH'
                     exit-code: '1'

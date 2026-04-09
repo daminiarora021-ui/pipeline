@@ -5,6 +5,9 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        env:
+            DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
+            DOCKER_TAG: ${{ github.sha }}
         steps:
             - name: checkout code 
               uses: actions/checkout@v4
@@ -41,7 +44,7 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                   echo "runnung App "
-                  export DOCKERHUB_USER=${{ vars.DOCKER_USER }}
+                  export DOCKER_USER=${{ vars.DOCKER_USER }}
                   export DOCKER_TAG=${{ github.sha }}
                   echo ${{ secrets.DOCKER_TOKEN }} | docker login - username ${{ vars.DOCKER_USER}} --password-stdin
                   cd ~/devops && docker compose down && docker compose up -d --build --force-recreate --pull always

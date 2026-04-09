@@ -14,7 +14,7 @@ jobs:
                 username: ${{ vars.DOCKER_USER }}
                 password: ${{ secrets.DOCKER_TOKEN }}
             - name: trivy Scanner
-              uses: aquasecurity/trivy-action@master
+              uses: aquasecurity/trivy-action@v0.35.0
               with:
                     scan-type: 'image'
                     image-ref: ${{ vars.DOCKER_USER }}/pipeline-app:latest

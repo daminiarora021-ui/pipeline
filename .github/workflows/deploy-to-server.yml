@@ -6,15 +6,6 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Copy Docker compose file
-              uses: appleboy/scp-action@v1
-              with:
-                host: ${{ secrets.EC2_SSH_HOST }}
-                username: ${{ secrets.EC2_SSH_USER }}
-                key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-                source: docker-compose.yml
-                target: ~/devops
-
             - name: ssh to prod server
               uses: appleboy/ssh-action@v1.0.3
               with:
@@ -23,5 +14,4 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                   echo "Starting Deployment"
-                  mkdir devops
-                  
+                  mkdir -p devops

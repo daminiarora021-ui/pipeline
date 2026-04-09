@@ -43,5 +43,6 @@ jobs:
                   echo "runnung App "
                   export DOCKERHUB_USER=${{ vars.DOCKER_USER }}
                   export DOCKER_TAG=${{ github.sha }}
-                  echo ${{ secrets.DOCKER_TOKEN }} | docker login - u ${{ secrets.DOCKER_USER}} --password-std
+                  echo ${{ secrets.DOCKER_TOKEN }} | docker login - username ${{ vars
+                  .DOCKER_USER}} --password-std
                   cd ~/devops && ~devops && docker compose down && docker compose up -d --build --force-recreate --pull always

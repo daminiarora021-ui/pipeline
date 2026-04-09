@@ -12,4 +12,5 @@ def health():
     return 'Server is up and running'
 
 
-app.run(port=80)
+
+

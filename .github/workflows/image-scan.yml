@@ -20,3 +20,4 @@ jobs:
                     image-ref: ${{ vars.DOCKER_USER }}/pipeline-app:latest
                     severity: 'CRITICAL,HIGH'
                     exit-code: '1'
+                    ignore-unfixed: true

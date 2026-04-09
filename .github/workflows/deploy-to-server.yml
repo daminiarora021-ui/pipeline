@@ -23,5 +23,5 @@ jobs:
                 key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
                 script: |
                   echo "Starting Deployment"
-                  cd ~/devops
-                  docker compose down && docker compose up -d --pull always
+                  mkdir devops
+                  
